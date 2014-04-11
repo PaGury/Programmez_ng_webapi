@@ -10,14 +10,14 @@
 	<span>Nouvelle tâche : </span><input type="text" ng-model="taskTitle"><button ng-click="addTask()">+</button>
 	<ul ng-repeat="task in tasks">
 		<li>
-			<span>{{task.title}}</span>
-			<button ng-click="task.isDone = true">Done</button>
+			<span ng-class="{isDone: task.isDone}">{{task.title}}</span>
+			<button ng-click="task.isDone = true" ng-show="!task.isDone">Done</button>
 			<button ng-click="$parent.removeTask($index)">Remove</button>
 		</li>
 	</ul>
 
 	<script src="js/app.js"></script>
 	<script src="js/controllers/MainController.js"></script>
-	<script src="js/controllers/TasksService.js"></script>
+	<script src="js/services/TasksService.js"></script>
 </body>
 </html>

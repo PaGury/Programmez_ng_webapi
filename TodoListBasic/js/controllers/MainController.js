@@ -1,22 +1,19 @@
-todoListApp.controller('MainController', function($scope, TasksService) {
-	$scope.tasks = TasksService.getTasks();
+todoListApp.controller('MainController', function($scope, tasksService) {
+	$scope.tasks = tasksService.getTasks();
 	$scope.taskTitle = "";
-
-	var addTaskToLocal = function(task) {
-		$scope.tasks.push(task);
-	};
 
 	$scope.addTask = function() {
 		if(!$scope.taskTitle)
 			return;
-
-		TasksService.addTask({
+		var task = {
 			isDone: false,
 			title: $scope.taskTitle
-		}, addTaskToLocal);
+		};
+		tasksService.add(task);
+		$scope.taskTitle = "";
 	};
 
 	$scope.removeTask = function(index) {
-		$scope.tasks.splice(index, 1);
+		tasksService.remove(index);
 	};
 });
