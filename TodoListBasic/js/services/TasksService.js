@@ -3,14 +3,14 @@ todoListApp.service("TasksService", function() {
 
 	this.add = function(task, cb) {
 		tasks.push(task);
-		cb();
+		cb(task);
 	};
 
 	this.remove = function(task, cb) {
 		var index = tasks.indexOf(task);
 		if(index !== -1) {
 			tasks.splice(index, 1);
-			cb(true);
+			cb(true, task);
 		}
 		else {
 			cb(false);
