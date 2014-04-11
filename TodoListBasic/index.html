@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="todolist">
+<head>
+	<meta charset="utf-8" />
+	<title>Todo List</title>
+	<link rel="stylesheet" href="styles/style.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+</head>
+<body ng-controller="MainController">
+	<span>Nouvelle tâche : </span><input type="text" ng-model="taskTitle"><button ng-click="addTask()">+</button>
+	<ul ng-repeat="task in tasks">
+		<li>
+			<span>{{task.title}}</span>
+			<button ng-click="task.isDone = true">Done</button>
+			<button ng-click="$parent.removeTask($index)">Remove</button>
+		</li>
+	</ul>
+
+	<script src="js/app.js"></script>
+	<script src="js/controllers/MainController.js"></script>
+</body>
+</html>
