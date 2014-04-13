@@ -5,6 +5,7 @@ todoListApp.controller('MainController', function($scope, tasksService) {
 	$scope.addTask = function() {
 		if(!$scope.taskTitle)
 			return;
+
 		var task = {
 			isDone: false,
 			title: $scope.taskTitle

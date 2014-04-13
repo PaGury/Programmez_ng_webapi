@@ -9,6 +9,10 @@ todoListApp.service("tasksService", function() {
 		tasks.splice(index, 1);
 	};
 
+	this.done = function(task) {
+		task.isDone = true;
+	};
+
 	this.getTasks = function() {
 		return tasks;
 	};

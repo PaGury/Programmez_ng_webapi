@@ -12,7 +12,7 @@
 		<li>
 			<span ng-class="{isDone: task.isDone}">{{task.title}}</span>
 			<button ng-click="$parent.doneTask(task)" ng-show="!task.isDone">Done</button>
-			<button ng-click="$parent.removeTask($index)">Remove</button>
+			<button ng-click="$parent.removeTask(task)">Remove</button>
 		</li>
 	</ul>
 
