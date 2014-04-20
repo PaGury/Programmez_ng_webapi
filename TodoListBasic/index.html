@@ -1,12 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html ng-app="todolist">
 <head>
 	<meta charset="utf-8" />
 	<title>Todo List</title>
-	<link rel="stylesheet" href="styles/style.css" />
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
 </head>
-<body ng-controller="MainController">
+<body ng-controller="mainController">
 	<span>Nouvelle tâche : </span><input type="text" ng-model="taskTitle"><button ng-click="addTask()">+</button>
 	<ul ng-repeat="task in tasks">
 		<li>

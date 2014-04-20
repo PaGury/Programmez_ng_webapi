@@ -9,14 +9,14 @@ todoListApp.service("tasksService", function($http) {
 	};
 
 	this.done = function(task) {
-		return httpRequest("put", task.id, task);
+		return httpRequest("put", task);
 	};
 
 	this.getTasks = function() {
-		return httpRequest("get", "");
+		return httpRequest("get");
 	};
 
-	var baseUrl = "localhost:8082/api/"
+	var baseUrl = "localhost:8082/api/todos/"
 	var httpRequest = function(method, url, data) {
 		var urlToSend = baseUrl;
 
